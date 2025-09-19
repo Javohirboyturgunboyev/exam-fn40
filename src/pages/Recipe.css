@@ -102,10 +102,22 @@
   .card-body .meta {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 30px;
     font-size: 13px;
     color: #444;
     margin-bottom: 15px;
+  }
+
+  .card-body .meta  span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+  }
+
+   .card-body .meta span img {
+    width: 20px;
+    height: 20px;
   }
   
   .card-body button {
@@ -204,6 +216,7 @@
     .card-body p {
       font-size: 13px;
     }
+    
   }
   
   /* 💻 Tablet: 780px */

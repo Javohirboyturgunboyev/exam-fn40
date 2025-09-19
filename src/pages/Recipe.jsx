@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import "../pages/Recipe.css";
+import "../pages/recipe.css";
 
 const initialRecipes = [
   {
@@ -218,9 +218,9 @@ export default function Recipe() {
                   <h2>{r.title}</h2>
                   <p>{r.desc}</p>
                   <div className="meta">
-                    <span>👥 {r.servings}</span>
-                    <span>⏱ Prep: {r.prep}</span>
-                    <span>🍳 Cook: {r.cook}</span>
+                    <span> <img width="20px" src="/images/icon-servings.svg" alt="" /> {r.servings}</span>
+                    <span> <img   width="20px" src="/images/icon-prep-time.svg" alt="" /> Prep: {r.prep}</span>
+                    <span> <img  width="20" src="/images/icon-cook-time.svg" alt="" /> Cook: {r.cook}</span>
                   </div>
                   <button onClick={() => navigate(`/recipes/${r.id}`)}>
                     View Recipe
