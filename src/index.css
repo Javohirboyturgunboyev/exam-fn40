@@ -1,0 +1,88 @@
+:root {
+  /* Base font size setup: 62.5% = 10px = 1rem */
+  font-size: 62.5%;
+
+  /* Colors */
+  /* Neutral Colors */
+  --color-neutral-900: #163a34;
+  --color-neutral-600: #395852;
+  --color-neutral-300: #d0dcd9;
+  --color-neutral-200: #e0e6e3;
+  --color-neutral-100: #f6f5f1;
+  --color-neutral-0: #ffffff;
+
+  /* Brand Colors */
+  --color-orange-500: #fe9f6b;
+  --color-teal-500: #49ac9b;
+  --color-indigo-500: #697ddb;
+
+  /* Typography - Font Families */
+  --font-primary: "Nunito", sans-serif;
+  --font-secondary: "Nunito Sans", sans-serif;
+
+  /* Typography - Font Weights */
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Typography - Font Sizes (1rem = 10px) */
+  --font-size-preset-1: 7.2rem; /* 72px */
+  --font-size-preset-1-tablet: 6.4rem; /* 64px */
+  --font-size-preset-1-mobile: 5.2rem; /* 52px */
+  --font-size-preset-2: 4.8rem; /* 48px */
+  --font-size-preset-2-mobile: 4rem; /* 40px */
+  --font-size-preset-3: 3.2rem; /* 32px */
+  --font-size-preset-4: 2.4rem; /* 24px */
+  --font-size-preset-5: 2rem; /* 20px */
+  --font-size-preset-6: 2rem; /* 20px */
+  --font-size-preset-7: 1.8rem; /* 18px */
+  --font-size-preset-8: 1.6rem; /* 16px */
+  --font-size-preset-9: 1.6rem; /* 16px */
+  --font-size-preset-10: 1.4rem; /* 14px */
+
+  /* Typography - Line Heights */
+  --line-height-tight: 110%;
+  --line-height-snug: 120%;
+  --line-height-normal: 130%;
+  --line-height-relaxed: 140%;
+  --line-height-loose: 150%;
+
+  /* Typography - Letter Spacing */
+  --letter-spacing-tight: -0.2rem; /* -2px */
+  --letter-spacing-snug: -0.1rem; /* -1px */
+  --letter-spacing-normal: -0.05rem; /* -0.5px */
+  --letter-spacing-wide: -0.04rem; /* -0.4px */
+  --letter-spacing-wider: -0.03rem; /* -0.3px */
+
+  /* Text Preset Classes */
+  --text-preset-1: var(--font-weight-extrabold) var(--font-size-preset-1) /
+    var(--line-height-tight) var(--font-primary);
+  --text-preset-1-tablet: var(--font-weight-extrabold)
+    var(--font-size-preset-1-tablet) / var(--line-height-tight)
+    var(--font-primary);
+  --text-preset-1-mobile: var(--font-weight-extrabold)
+    var(--font-size-preset-1-mobile) / var(--line-height-tight)
+    var(--font-primary);
+  --text-preset-2: var(--font-weight-extrabold) var(--font-size-preset-2) /
+    var(--line-height-snug) var(--font-primary);
+  --text-preset-2-mobile: var(--font-weight-extrabold)
+    var(--font-size-preset-2-mobile) / var(--line-height-snug)
+    var(--font-primary);
+  --text-preset-3: var(--font-weight-bold) var(--font-size-preset-3) /
+    var(--line-height-normal) var(--font-primary);
+  --text-preset-4: var(--font-weight-bold) var(--font-size-preset-4) /
+    var(--line-height-normal) var(--font-primary);
+  --text-preset-5: var(--font-weight-bold) var(--font-size-preset-5) /
+    var(--line-height-relaxed) var(--font-primary);
+  --text-preset-6: var(--font-weight-medium) var(--font-size-preset-6) /
+    var(--line-height-relaxed) var(--font-secondary);
+  --text-preset-7: var(--font-weight-semibold) var(--font-size-preset-7) /
+    var(--line-height-loose) var(--font-primary);
+  --text-preset-8: var(--font-weight-bold) var(--font-size-preset-8) /
+    var(--line-height-loose) var(--font-secondary);
+  --text-preset-9: var(--font-weight-medium) var(--font-size-preset-9) /
+    var(--line-height-loose) var(--font-secondary);
+  --text-preset-10: var(--font-weight-bold) var(--font-size-preset-10) /
+    var(--line-height-loose) var(--font-secondary);
+}
