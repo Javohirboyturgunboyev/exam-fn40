@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import "../pages/recipe.css";
+import "../pages/Recipe.css";
 
 const initialRecipes = [
   {
