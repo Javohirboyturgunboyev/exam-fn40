@@ -1,6 +1,8 @@
 import "./Home.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <div className="home">
       <div className="container">
@@ -78,20 +80,22 @@ export default function Home() {
 
       
         <section className="cta">
-          <img src="/images/pattern-fork.svg" alt="fork img" className="fork" />
-          <div className="cta-content">
-            <h2>Ready to cook smarter?</h2>
-            <p>
-              Hit the button, pick a recipe, and get dinner on the table—fast.
-            </p>
-            <button className="btn">Browse recipes</button>
-          </div>
-          <img
-            src="/images/pattern-knife.svg"
-            alt="knife img"
-            className="knife"
-          />
-        </section>
+      <img src="/images/pattern-fork.svg" alt="fork img" className="fork" />
+      <div className="cta-content">
+        <h2>Ready to cook smarter?</h2>
+        <p>
+          Hit the button, pick a recipe, and get dinner on the table—fast.
+        </p>
+        <button className="btn" onClick={() => navigate("/recipe")}>
+          Browse recipes
+        </button>
+      </div>
+      <img
+        src="/images/pattern-knife.svg"
+        alt="knife img"
+        className="knife"
+      />
+    </section>
 
         <footer className="footer">
           <p>Made with ❤️ and 🥑</p>

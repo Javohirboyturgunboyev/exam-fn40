@@ -1,0 +1,32 @@
+{
+    "recipes": [
+      {
+        "id": 1,
+        "title": "Mediterranean Chickpea Salad",
+        "desc": "A refreshing, protein-packed salad tossed in a lemon-olive oil dressing.",
+        "servings": 2,
+        "prep": "10 mins",
+        "cook": "0 min",
+        "img": "/images/mediterranean-chickpea-salad-large.webp"
+      },
+      {
+        "id": 2,
+        "title": "Avocado & Tomato Wholegrain Toast",
+        "desc": "Creamy avocado spread over toasted wholegrain bread, topped with juicy tomatoes.",
+        "servings": 1,
+        "prep": "5 mins",
+        "cook": "5 mins",
+        "img": "/images/avocado-tomato-wholegrain-toast-large.webp"
+      },
+      {
+        "id": 3,
+        "title": "One-Pan Lemon Garlic Salmon",
+        "desc": "A 15-minute weeknight dinner of flaky salmon and tender asparagus.",
+        "servings": 2,
+        "prep": "5 mins",
+        "cook": "12 mins",
+        "img": "/images/salmon-asparagus-large.webp"
+      }
+    ]
+  }
+  

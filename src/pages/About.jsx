@@ -1,10 +1,13 @@
 import "./About.css";
+import { useNavigate } from "react-router-dom";
 
 export default function About() {
+  const navigate = useNavigate();
+
   return (
     <div className="container">
       <div className="about">
-        {/* Hero Section */}
+       
         <section className="hero">
           <div className="hero-text">
             <span className="tag">Our mission</span>
@@ -100,7 +103,7 @@ export default function About() {
           </div>
         </section>
 
-        {/* Beyond the plate */}
+      
         <section className="section gray plate">
           <div className="plate-text">
             <h2>Beyond the plate</h2>
@@ -132,22 +135,24 @@ export default function About() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="cta">
-          <img src="/images/pattern-fork.svg" alt="fork img" className="fork" />
-          <div className="cta-content">
-            <h2>Ready to cook smarter?</h2>
-            <p>
-              Hit the button, pick a recipe, and get dinner on the table—fast.
-            </p>
-            <button className="btn">Browse recipes</button>
-          </div>
-          <img
-            src="/images/pattern-knife.svg"
-            alt="knife img"
-            className="knife"
-          />
-        </section>
+       
+         <section className="cta">
+      <img src="/images/pattern-fork.svg" alt="fork img" className="fork" />
+      <div className="cta-content">
+        <h2>Ready to cook smarter?</h2>
+        <p>
+          Hit the button, pick a recipe, and get dinner on the table—fast.
+        </p>
+        <button className="btn" onClick={() => navigate("/recipe")}>
+          Browse recipes
+        </button>
+      </div>
+      <img
+        src="/images/pattern-knife.svg"
+        alt="knife img"
+        className="knife"
+      />
+    </section>
 
         <footer className="footer">
           <p>Made with ❤️ and 🥑</p>

@@ -1,4 +1,4 @@
-/* Umumiy */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -15,7 +15,7 @@
   margin: 0;
 }
 
-/* Hero */
+
 .her {
   padding: 3rem 1rem;
 }
@@ -67,7 +67,7 @@
   border-radius: 10px;
 }
 
-/* Features */
+
 .features {
   padding: 3rem 1rem;
 }
@@ -101,7 +101,7 @@
   margin-bottom: 0.5rem;
 }
 
-/* Real Life */
+
 .real-life {
   display: flex;
   align-items: center;
@@ -130,7 +130,7 @@
   border-radius: 10px;
 }
 
-/* CTA */
+
 .cta {
   position: relative;
   background: #E9EDE8;
@@ -170,7 +170,7 @@
   cursor: pointer;
 }
 
-/* Fork & Knife */
+
 .fork {
   position: absolute;
   left: 0;
@@ -187,7 +187,7 @@
   transform: translateX(25%); 
 }
 
-/* Footer */
+
 .footer {
   padding: 1.5rem;
   font-size: 0.9rem;
@@ -207,7 +207,7 @@
   width: 24px;
 }
 
-/* ==================== RESPONSIVE ==================== */
+
 
 /* Large tablet */
 @media (max-width: 992px) {
@@ -239,19 +239,19 @@
   }
 }
 
-/* Tablet */
+
 @media (max-width: 768px) {
   .real-life {
-    flex-direction: column; /* yonma-yon o‘rniga ustma-ust */
+    flex-direction: column; 
     text-align: center;
   }
 
   .real-text {
-    order: 1; /* matn birinchi */
+    order: 1; 
   }
 
   .real-img {
-    order: 2; /* rasm keyin */
+    order: 2; 
   }
 
   .fork,
@@ -265,7 +265,6 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 600px) {
   .her h1 {
     font-size: 2rem;

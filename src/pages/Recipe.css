@@ -1,4 +1,4 @@
-/* Umumiy style */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -12,7 +12,7 @@
     font-family: sans-serif;
   }
   
-  /* Header */
+  
   .recipe-header {
     text-align: center;
     margin-bottom: 40px;
@@ -219,7 +219,7 @@
     
   }
   
-  /* 💻 Tablet: 780px */
+
   @media (max-width: 780px) {
     .recipe-header h1 {
       font-size: 24px;
