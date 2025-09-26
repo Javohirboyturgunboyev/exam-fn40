@@ -30,7 +30,10 @@
   
   .details-img {
     width: 380px;
+    height: 380px;
     max-width: 100%;
+    /* height: auto; 🔑 proporsiyani saqlaydi */
+    /* max-height: 320px; rasm balandligi oshib ketmasin */
     border-radius: 14px;
     object-fit: cover;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
