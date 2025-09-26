@@ -23,9 +23,11 @@ export default function Recipe() {
     prepMinutes: "",
     cookMinutes: "",
     img: "",
+    ingredients: "",
+    instructions: "",
   });
 
-  // faqat API'dan olish
+  // API'dan olish
   useEffect(() => {
     fetch("http://localhost:5001/recipes")
       .then((res) => res.json())
@@ -60,7 +62,9 @@ export default function Recipe() {
       !newRecipe.servings ||
       !newRecipe.prepMinutes ||
       !newRecipe.cookMinutes ||
-      !newRecipe.img
+      !newRecipe.img ||
+      !newRecipe.ingredients ||
+      !newRecipe.instructions
     ) {
       alert("Barcha maydonlarni to‘ldiring!");
       return;
@@ -74,6 +78,8 @@ export default function Recipe() {
       prepMinutes: parseInt(newRecipe.prepMinutes),
       cookMinutes: parseInt(newRecipe.cookMinutes),
       image: { small: newRecipe.img, large: newRecipe.img },
+      ingredients: newRecipe.ingredients.split(",").map((i) => i.trim()),
+      instructions: newRecipe.instructions.split(",").map((s) => s.trim()),
     };
 
     setRecipes([...recipes, newItem]);
@@ -84,6 +90,8 @@ export default function Recipe() {
       prepMinutes: "",
       cookMinutes: "",
       img: "",
+      ingredients: "",
+      instructions: "",
     });
     setShowForm(false);
 
@@ -95,13 +103,19 @@ export default function Recipe() {
   };
 
   const handleClearAll = () => {
-    setRecipes([]);
-    localStorage.setItem("recipes", JSON.stringify([]));
+    
+    const defaultRecipes = recipes.filter((r) => String(r.id).length < 6);
 
+    setRecipes(defaultRecipes);
+    localStorage.setItem("recipes", JSON.stringify(defaultRecipes));
+
+    
     recipes.forEach((r) => {
-      fetch(`http://localhost:5001/recipes/${r.id}`, {
-        method: "DELETE",
-      }).catch((err) => console.error("Delete error:", err));
+      if (String(r.id).length > 6) {
+        fetch(`http://localhost:5001/recipes/${r.id}`, {
+          method: "DELETE",
+        }).catch((err) => console.error("Delete error:", err));
+      }
     });
   };
 
@@ -150,9 +164,9 @@ export default function Recipe() {
                   <h2>{r.title}</h2>
                   <p>{r.overview}</p>
                   <div className="meta">
-                    <span><img src="/images/icon-servings.svg" alt="" /> {r.servings}</span>
-                    <span><img src="/images/icon-prep-time.svg" alt="" /> Prep: {r.prepMinutes} mins</span>
-                    <span><img src="/images/icon-cook-time.svg" alt="" /> Cook: {r.cookMinutes} mins</span>
+                    <span>👥 {r.servings}</span>
+                    <span>⏱ Prep: {r.prepMinutes} mins</span>
+                    <span>🍳 Cook: {r.cookMinutes} mins</span>
                   </div>
                   <button onClick={() => navigate(`/recipes/${r.id}`)}>
                     View Recipe
@@ -172,58 +186,82 @@ export default function Recipe() {
           <button onClick={handleClearAll}>🗑 Clear All Recipes</button>
 
           {showForm && (
-            <div className="add-form">
-              <input
-                type="text"
-                placeholder="Image URL"
-                value={newRecipe.img}
-                onChange={(e) =>
-                  setNewRecipe({ ...newRecipe, img: e.target.value })
-                }
-              />
-              <input
-                type="text"
-                placeholder="Title"
-                value={newRecipe.title}
-                onChange={(e) =>
-                  setNewRecipe({ ...newRecipe, title: e.target.value })
-                }
-              />
-              <input
-                type="text"
-                placeholder="Overview"
-                value={newRecipe.overview}
-                onChange={(e) =>
-                  setNewRecipe({ ...newRecipe, overview: e.target.value })
-                }
-              />
-              <input
-                type="number"
-                placeholder="Servings"
-                value={newRecipe.servings}
-                onChange={(e) =>
-                  setNewRecipe({ ...newRecipe, servings: e.target.value })
-                }
-              />
-              <input
-                type="number"
-                placeholder="Prep Minutes"
-                value={newRecipe.prepMinutes}
-                onChange={(e) =>
-                  setNewRecipe({ ...newRecipe, prepMinutes: e.target.value })
-                }
-              />
-              <input
-                type="number"
-                placeholder="Cook Minutes"
-                value={newRecipe.cookMinutes}
-                onChange={(e) =>
-                  setNewRecipe({ ...newRecipe, cookMinutes: e.target.value })
-                }
-              />
-              <button onClick={handleAddRecipe}>Add Recipe</button>
-            </div>
-          )}
+  <div className="add-form">
+    <h2>Add a New Recipe</h2>
+    <input
+      type="text"
+      placeholder="Image URL"
+      value={newRecipe.img}
+      onChange={(e) =>
+        setNewRecipe({ ...newRecipe, img: e.target.value })
+      }
+    />
+    <input
+      type="text"
+      placeholder="Title"
+      value={newRecipe.title}
+      onChange={(e) =>
+        setNewRecipe({ ...newRecipe, title: e.target.value })
+      }
+    />
+    <input
+      type="text"
+      placeholder="Overview"
+      value={newRecipe.overview}
+      onChange={(e) =>
+        setNewRecipe({ ...newRecipe, overview: e.target.value })
+      }
+    />
+    <input
+      type="number"
+      placeholder="Servings"
+      value={newRecipe.servings}
+      onChange={(e) =>
+        setNewRecipe({ ...newRecipe, servings: e.target.value })
+      }
+    />
+    <input
+      type="number"
+      placeholder="Prep Minutes"
+      value={newRecipe.prepMinutes}
+      onChange={(e) =>
+        setNewRecipe({ ...newRecipe, prepMinutes: e.target.value })
+      }
+    />
+    <input
+      type="number"
+      placeholder="Cook Minutes"
+      value={newRecipe.cookMinutes}
+      onChange={(e) =>
+        setNewRecipe({ ...newRecipe, cookMinutes: e.target.value })
+      }
+    />
+    <textarea
+      placeholder="Ingredients (comma separated)"
+      value={newRecipe.ingredients}
+      onChange={(e) =>
+        setNewRecipe({ ...newRecipe, ingredients: e.target.value })
+      }
+    />
+    <textarea
+      placeholder="Instructions (comma separated)"
+      value={newRecipe.instructions}
+      onChange={(e) =>
+        setNewRecipe({ ...newRecipe, instructions: e.target.value })
+      }
+    />
+
+    <div className="form-buttons">
+      <button className="cancel-btn" onClick={() => setShowForm(false)}>
+        Cancel
+      </button>
+      <button className="add-btn" onClick={handleAddRecipe}>
+        Add Recipe
+      </button>
+    </div>
+  </div>
+)}
+
         </div>
 
         <footer className="footer">

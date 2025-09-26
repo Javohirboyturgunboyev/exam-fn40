@@ -28,12 +28,11 @@
     flex-wrap: wrap;
   }
   
-  .details-img {
+  .details-main img {
     width: 380px;
     height: 380px;
     max-width: 100%;
-    /* height: auto; 🔑 proporsiyani saqlaydi */
-    /* max-height: 320px; rasm balandligi oshib ketmasin */
+  
     border-radius: 14px;
     object-fit: cover;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
@@ -41,6 +40,7 @@
   }
   .details-img:hover {
     transform: scale(1.03);
+    cursor: pointer;
   }
   
   .details-info {
